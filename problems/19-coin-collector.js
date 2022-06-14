@@ -27,6 +27,25 @@ Example 3:
 
 // your code here
 
+const coinCollector = (times) => {
+  let timesCount = 0;
+  const coinArr = [];
+  function coins(coin) {
+    timesCount++;
+    coinArr.push(coin);
+    return coinArr
+  }
+  if(timesCount === times) {
+    return coinArr;
+  }
+  return coins;
+}
+
+let threeCoins = coinCollector(3); // returns a function
+  threeCoins(25); // returns a function
+  threeCoins(5); // returns a function
+  console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

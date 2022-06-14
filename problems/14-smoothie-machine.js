@@ -23,6 +23,32 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 // your code here
+let smoothieMachine = ( ...args) => {
+  console.log(args);
+  let newArr = ['I\'m having a smoothie with']
+  return function (...args) {
+    if(args.length === 1) {
+      let word = args[0];
+      newArr.push(word);
+    } else {
+      for (let i = 0; i < args.length; i++) {
+        let word = args[i];
+        newArr.push('and ' + word);
+      }
+    }
+    return newArr.join(' ');
+  }
+}
+
+
+let smoothie1 = smoothieMachine();
+
+console.log(smoothie1("milk"));
+// prints "I'm having a smoothie with milk"
+console.log(smoothie1("kale", "spinach"));
+// prints "I'm having a smoothie with milk and kale and spinach"
+console.log(smoothie1("honey", "pears", "berries"));
+// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
